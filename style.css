@@ -1,0 +1,970 @@
+/* RESET GLOBAL (remove espaços indesejados) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove borda branca lateral */
+body {
+  margin: 0;
+  background: #0b1c2c; /* mesma cor do site */
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e9e9e9;
+}
+
+/* HEADER */
+/* ===== HEADER ===== */
+header {
+  background-color: #0e2a47;
+  /* Azul escuro profissional */
+
+  display: flex;
+  justify-content: space-between;
+  /* Logo na esquerda | Menu na direita */
+
+  align-items: center;
+  /* Alinha tudo verticalmente */
+
+  padding: 20px 80px;
+  /* Espaçamento interno (topo/baixo | lados) */
+}
+
+
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  /* Alinha imagem + texto */
+
+  gap: 10px;
+  /* Espaço entre logo e nome */
+}
+
+.logo img {
+  height: 40px;
+  /* Ajuste do tamanho da logo */
+}
+
+.logo span {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  /* Deixa o nome mais forte */
+}
+
+
+/* ===== MENU ===== */
+.menu {
+  display: flex;
+  align-items: center;
+  /* Centraliza verticalmente */
+}
+
+
+/* ===== LINKS DO MENU ===== */
+.menu a {
+  font-size: 15px;
+  /* 🔥 DIMINUI o tamanho do menu (ajuste aqui) */
+
+  color: #ffffff;
+  text-decoration: none;
+
+  margin-left: 25px;
+  /* Espaço entre os itens */
+
+  font-weight: 500;
+
+  transition: 0.3s;
+  /* Suaviza hover */
+}
+
+
+/* ===== EFEITO HOVER ===== */
+.menu a:hover {
+  color: #d4af37;
+  /* Dourado premium */
+}
+
+
+/* ===== HOVER ===== */
+.menu a:hover {
+  color: #d4af37;
+}
+
+
+/* ===== EFEITO AO PASSAR O MOUSE ===== */
+.menu a:hover {
+  color: #d4af37; 
+  /* Dourado → transmite sofisticação e autoridade */
+}
+
+/* ===== ROLAGEM SUAVE ===== */
+html {
+  scroll-behavior: smooth;
+  /* Faz a rolagem ficar suave ao clicar nos links */
+}
+/* HERO COMPLETO */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+
+  /* IMAGEM DE FUNDO */
+  background: url("hero.png") center/cover no-repeat;
+}
+
+/* CAMADA ESCURA (EFEITO VIDRO) */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* cor do "vidro" */
+  background: rgba(6, 28, 47, 0.75);
+
+  /* efeito mais premium */
+  backdrop-filter: blur(4px);
+
+  z-index: 1;
+}
+
+/* GARANTE QUE O CONTEÚDO FIQUE NA FRENTE */
+.hero-text,
+.hero-image {
+  position: relative;
+  z-index: 2;
+}
+
+/* TEXTO */
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  color: #ffffff; /* TEXTO BRANCO */
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  color: #e2e8f0;
+  margin-bottom: 30px;
+}
+/* BOTÃO whatsapp */
+.hero-text a {
+  display: inline-block; 
+  /* Faz o <a> se comportar como botão */
+
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  /* Gradiente dourado premium */
+
+  color: #000;
+  /* Cor do texto */
+
+  padding: 15px 35px;
+  /* Espaçamento interno */
+
+  border-radius: 10px;
+  /* Bordas arredondadas */
+
+  font-size: 14px;
+
+  text-decoration: none;
+  /* REMOVE o sublinhado do link */
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  /* Sombra elegante */
+
+  transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.hero-text a:hover {
+  transform: translateY(-2px);
+}
+
+/* IMAGEM DA DIREITA (opcional manter) */
+.hero-image img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.logo img {
+  width: 40px;      /* controla o tamanho */
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px; /* opcional (deixa levemente arredondado) */
+}
+
+/*/* =========================
+   SEÇÃO 2 - BENEFÍCIOS / CARDS
+   ========================= */
+
+/* Container dos cards (grid responsivo) */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas no desktop */
+  gap: 30px; /* espaçamento entre os cards */
+  max-width: 1100px; /* largura máxima da seção */
+  margin: 0 auto; /* centraliza o container */
+}
+
+/* Efeito ao passar o mouse */
+.card:hover {
+  transform: translateY(-5px); /* levanta o card levemente */
+}
+:root {
+  --azul-principal: #0B1F3A;
+  --azul-secundario: #132B4F;
+  --dourado: #C9A646;
+  --branco: #F5F5F5;
+  --cinza: #B0B7C3;
+}
+
+/* Seção */
+.benefits {
+  padding: 80px 20px;
+  background: var(--azul-principal);
+  text-align: center;
+}
+
+/* Título */
+.benefits h2 {
+  color: var(--branco);
+  font-size: 32px;
+  margin-bottom: 60px;
+}
+
+/* Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.card {
+  background: var(--azul-secundario);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--dourado);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Título do card */
+.card h3 {
+  color: var(--branco);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Imagem */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 1px solid var(--dourado);
+  margin-bottom: 15px;
+}
+
+/* Texto */
+.card p {
+  color: var(--cinza);
+  font-size: 14px;
+}
+
+/* Legenda */
+.legenda {
+  margin-top: 40px;
+  color: var(--cinza);
+  font-style: italic;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .benefits-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   RESPONSIVO (MOBILE)
+   ========================= */
+@media (max-width: 768px) {
+
+  /* 1 coluna no mobile */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduz tamanho do título */
+  .benefits h2 {
+    font-size: 24px;
+  }
+}
+/*sem estrutura você tenta, cor de fundo*/
+/* ===== Seção CTA (parte final abaixo dos cards) ===== */
+
+.cta-final {
+  text-align: center;          /* Centraliza todo o conteúdo (título, subtítulo e botão) */
+  background-color: #0e2a47;   /* Azul marinho (estilo premium/jurídico) */
+  padding: 60px 20px;          /* Espaçamento interno (topo/baixo e laterais) */
+}
+
+
+/* ===== Subtítulo ===== */
+.cta-subtitulo {
+  font-size: 19px;        /* Tamanho equilibrado (menor que o título, maior que textos comuns) */
+  color: #c5c5c5;         /* Cinza claro para não competir com o título */
+  margin-top: 8px;        /* Espaço entre o título e o subtítulo */
+  margin-bottom: 50px;    /* Espaço antes do botão */
+  line-height: 1.5;       /* Melhor legibilidade */
+  font-weight: 400;       /* Peso leve para manter aparência sofisticada */
+}
+
+
+/* ===== Título ===== */
+.cta-final h2 {
+  font-size: 28px;        /* Destaque principal da seção */
+  font-weight: bold;      /* Deixa o título mais forte */
+  color: #fff;            /* Branco para contraste com fundo escuro */
+  margin-bottom: 20px;    /* Espaço abaixo do título */
+}
+
+/* ===== Botão CTA ===== */
+.btn-cta {
+  display: inline-block; 
+  /* Permite usar padding e se comportar como botão */
+
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  /* Dourado premium (corrigi o comentário que estava errado) */
+
+  color: #0e2a47; 
+  /* Azul escuro fica mais sofisticado que preto puro */
+
+  font-size: 18px; 
+  /* 22px estava grande demais (fica mais elegante assim) */
+
+  font-weight: 600; 
+  /* Destaque sem exagero */
+
+  padding: 16px 32px; 
+  /* Melhor proporção (antes estava “gordo”) */
+
+  border-radius: 8px; 
+  /* Mais elegante (12px estava muito “inflado”) */
+
+  text-decoration: none; 
+  /* Remove sublinhado */
+
+  transition: all 0.3s ease;
+  /* Animação mais suave e completa */
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  /* Sombra premium */
+
+  cursor: pointer;
+}
+
+/* ===== Hover (efeito ao passar o mouse) ===== */
+.btn-cta:hover {
+  transform: translateY(-3px);
+  /* Efeito de elevação */
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  /* Sombra mais forte no hover */
+}
+
+/* ===== Efeito ao passar o mouse ===== */
+.btn-cta:hover {
+  background-color: #27ae60; /* Verde mais escuro ao passar o mouse */
+  transform: scale(1.05);   /* Leve aumento (efeito de destaque/interação) */
+}
+
+
+/* parte da oferta*/
+/* ===== Seção principal ===== */
+/* ===== Seção principal (agora com imagem de fundo) ===== */
+.oferta {
+  position: relative; /* Necessário para o overlay funcionar */
+
+  /* Imagem de fundo (troque pelo caminho correto) */
+  background: url("oferta.jpg") no-repeat center center;
+
+  background-size: cover; /* Faz a imagem ocupar toda a seção */
+  background-position: center;
+
+  color: #ffffff;
+  padding: 80px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* ===== Overlay escuro (efeito premium + melhora leitura) ===== */
+.oferta::before {
+  content: ""; /* obrigatório */
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Azul escuro com transparência */
+  background: rgba(11, 28, 44, 0.85);
+
+  z-index: 0; /* fica atrás do conteúdo */
+}
+
+
+/* ===== Container (fica acima do overlay) ===== */
+.container {
+  position: relative;
+  z-index: 1; /* garante que o conteúdo apareça na frente */
+
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* ===== Título ===== */
+.oferta h1 {
+  font-size: 36px;
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+
+.oferta h1 span {
+  color: #d4af37; /* dourado */
+}
+
+
+/* ===== Subtítulo ===== */
+.sub {
+  font-size: 18px;
+  color: #cfd8e3;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+
+/* ===== Lista de benefícios ===== */
+.beneficios {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.beneficios li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+
+/* ===== Observação ===== */
+.obs {
+  font-size: 15px;
+  color: #aab7c4;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+
+/* ===== Botão ===== */
+.botao {
+  display: inline-block;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #0b1c2c;
+  padding: 18px 35px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.botao:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+
+/* ===== EFEITO EXTRA (caso use outra classe de botão) ===== */
+.btn-oferta:hover {
+  background: #27ae60;
+  transform: scale(1.05);
+}
+
+
+/* ===== TEXTO DE GARANTIA ===== */
+.garantia {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #c5c5c5; /* ajustado para combinar com fundo escuro */
+}
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .oferta-box {
+    grid-template-columns: 1fr;
+  }
+
+  .preco-box {
+    grid-column: span 1;
+  }
+}
+
+/* ===== SEÇÃO APRESENTAÇÃO PROFISSIONAL ===== */
+
+/* =========================
+   SEÇÃO SOBRE (COM IMAGEM DE FUNDO)
+   ========================= */
+.sobre {
+  /* IMAGEM DE FUNDO (advogado + azul já aplicado) */
+  background: url('apresentacao.png') no-repeat center right;
+
+  background-size: cover; /* faz a imagem cobrir toda a seção */
+  
+  color: #ffffff; /* texto branco para contraste */
+  padding: 100px 20px; /* espaço interno da seção */
+}
+
+/* ===== CONTAINER ===== */
+.sobre-container {
+  max-width: 1100px; /* largura máxima */
+  margin: 0 auto; /* centraliza na tela */
+
+  display: flex; /* ativa layout lado a lado */
+  align-items: center; /* alinha verticalmente */
+  justify-content: flex-start; /* mantém conteúdo à esquerda */
+
+  min-height: 510px; /* altura mínima para dar destaque */
+}
+
+/* ===== BLOCO DE TEXTO ===== */
+
+/* ===== BLOCO DE TEXTO (AJUSTE) ===== */
+/* ===== SEÇÃO ===== */
+.sobre {
+  padding: 60px 0;
+  /* Espaçamento vertical da seção (topo e baixo)
+     → cria respiro e deixa o layout mais elegante */
+}
+
+
+/* ===== CONTAINER (DEFINE A COLUNA DO TEXTO) ===== */
+.sobre-container {
+  max-width: 600px; 
+  /* Limita a largura do conteúdo
+     → evita linhas muito longas (melhora leitura) */
+
+  margin-left: 80px; 
+  /* Define o recuo da coluna em relação à esquerda
+     → esse valor controla o alinhamento geral */
+}
+
+
+/* ===== TÍTULO PRINCIPAL ===== */
+.sobre h2 {
+  font-size: 42px;
+  /* Tamanho grande para transmitir autoridade */
+
+  font-weight: 600;
+  /* Peso semi-bold = mais sofisticado */
+
+  letter-spacing: -0.5px;
+  /* Leve ajuste para aparência mais premium */
+
+  margin-left: 80px; 
+  /* IMPORTANTE: alinha o título com o texto
+     → deve ter o mesmo valor do .sobre-container */
+
+  margin-bottom: 30px; 
+  /* Espaço entre o título e o conteúdo abaixo */
+}
+
+
+/* ===== BLOCO DE TEXTO ===== */
+.sobre-texto {
+  text-align: left;
+  /* Alinhamento padrão para leitura profissional */
+}
+
+
+/* ===== SUBTÍTULO (Prazer, Advogado...) ===== */
+.sobre-texto h3 {
+  font-size: 22px;
+  /* Menor que o h2, criando hierarquia visual */
+
+  font-weight: 500;
+  /* Peso médio para diferenciar do título principal */
+
+  margin-bottom: 15px;
+  /* Espaço entre subtítulo e primeiro parágrafo */
+
+  
+  text-align: center;
+  /* CENTRALIZA o texto corretamente */
+}
+
+
+/* ===== PARÁGRAFOS ===== */
+/* ===== PARÁGRAFOS ===== */
+.sobre-texto p {
+  font-size: 18px;
+  /* Tamanho ideal para leitura confortável */
+
+  line-height: 1.7;
+  /* Espaçamento entre linhas melhora legibilidade */
+
+  color: #f3f3f3;
+  /* Cor clara para contraste */
+
+  margin-bottom: 15px;
+  /* Espaço entre parágrafos */
+
+  text-align: center;
+  /* CENTRALIZA o texto corretamente */
+}
+
+/* ===== SEÇÃO DÚVIDAS FREQUENTES ===== */
+.faq {
+ 
+  background: #ffffff ; /* fundo off-white levemente azulado (destaca da seção anterior e passa sensação premium) */
+  padding: 80px 20px; /* espaço interno (cima/baixo | lados) */
+  text-align: center; /* centraliza o título */
+}
+
+/* ===== TÍTULO ===== */
+.faq h2 {
+  font-size: 32px; /* tamanho do título */
+  margin-bottom: 40px; /* espaço abaixo do título */
+}
+
+/* ===== ITEM (CAIXA DE CADA PERGUNTA) ===== */
+.faq-item {
+  max-width: 800px; /* largura máxima (melhora leitura) */
+  margin: 0 auto 20px; /* centraliza e dá espaço entre itens */
+  border-radius: 6px; /* cantos levemente arredondados */
+  overflow: hidden; /* impede conteúdo de sair da caixa */
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* sombra leve (efeito premium) */
+}
+
+/* ===== PERGUNTA (BOTÃO CLICÁVEL) ===== */
+.faq-pergunta {
+  width: 100%; /* ocupa toda a largura */
+  background: #08263f; /* azul escuro (autoridade e contraste) */
+  color: #fff; /* texto branco */
+  padding: 18px 20px; /* espaço interno */
+  font-size: 16px; /* tamanho da pergunta */
+  border: none; /* remove borda padrão */
+  cursor: pointer; /* mostra que é clicável */
+
+  display: flex; /* ativa flexbox */
+  justify-content: space-between; /* separa texto e + */
+  align-items: center; /* alinha verticalmente */
+
+  transition: 0.3s; /* suaviza hover */
+}
+
+/* ===== HOVER (QUANDO PASSA O MOUSE) ===== */
+.faq-pergunta:hover {
+  background: #0d3558; /* azul um pouco mais claro (feedback visual) */
+}
+
+/* ===== RESPOSTA (CAIXA ESCONDIDA) ===== */
+.faq-resposta {
+  background: #d2d5d8; /* azul claro acinzentado (suave e fácil leitura) */
+  max-height: 0; /* começa escondido */
+  overflow: hidden; /* esconde conteúdo extra */
+  transition: max-height 0.3s ease; /* anima abertura */
+}
+
+/* ===== TEXTO DA RESPOSTA ===== */
+.faq-resposta p {
+  padding: 20px; /* espaço interno */
+  text-align: left; /* melhora leitura */
+  color: #1e293b; /* texto mais escuro (contraste melhor que cinza claro) */
+  line-height: 1.6; /* espaçamento entre linhas */
+}
+
+/* ===== ITEM ATIVO (QUANDO CLICA) ===== */
+.faq-item.ativo .faq-resposta {
+  max-height: 200px; /* altura máxima ao abrir (mostra conteúdo) */
+}
+
+/* ===== ANIMAÇÃO DO + ===== */
+.faq-item.ativo .faq-pergunta span {
+  transform: rotate(45deg); /* gira o + (vira um X visualmente) */
+}
+/* =========================
+   CTA FINAL (SEÇÃO DE OFERTA)
+   ========================= */
+.cta-final-section {
+  background: #08263f;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta-final-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.cta-final-section p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* BOTÃO CTA */
+.cta-final-btn {
+  display: inline-block;
+  background: #d9d9d9;
+  color: #000;
+  padding: 15px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.cta-final-btn:hover {
+  background: #bfbfbf;
+}
+
+/* TEXTO PEQUENO ABAIXO DO BOTÃO */
+.cta-final-mini {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+
+/* =========================
+   FOOTER (RODAPÉ)
+   ========================= */
+/* ===== SEÇÃO FINAL (ABAIXO DO FAQ) ===== */
+
+/* ===== FOOTER ===== */
+/* ===== FOOTER ===== */
+/* =========================
+/* =========================
+   CTA FINAL (PARTE DE CIMA)
+   ========================= */
+
+/* BLOCO PRINCIPAL (SEM IMAGEM) */
+.cta-final-section {
+  background: #0b1c2c; /* define a cor de fundo (azul escuro elegante) */
+  color: #ffffff; /* define a cor padrão do texto como branco */
+  text-align: center; /* centraliza todo o conteúdo horizontalmente */
+  padding: 80px 20px; /* espaçamento interno: 80px em cima/baixo e 20px nas laterais */
+}
+
+/* TÍTULO */
+.cta-final-section h2 {
+  font-size: 28px; /* tamanho do texto do título */
+  margin-bottom: 20px; /* espaço abaixo do título */
+}
+
+/* TEXTO */
+.cta-final-section p {
+  font-size: 16px; /* tamanho do parágrafo */
+  margin-bottom: 30px; /* espaço abaixo do texto */
+  line-height: 1.6; /* altura da linha para melhorar leitura */
+  color: #dbeafe; /* cor azul claro suave para contraste elegante */
+}
+
+/* BOTÃO */
+.cta-final-btn {
+  display: inline-block; /* permite aplicar padding e manter comportamento de botão */
+  background: linear-gradient(135deg, #d4af37, #b8962e); /* gradiente dourado (efeito premium) */
+  color: #ffffff; /* cor do texto do botão */
+  padding: 20px 28px; /* tamanho interno do botão (deixa ele grande e chamativo) */
+  border-radius: 6px; /* bordas levemente arredondadas */
+  text-decoration: none; /* remove sublinhado do link */
+  font-weight: 600; /* deixa o texto mais forte (semi-bold) */
+  transition: 0.3s; /* suaviza animações (hover) */
+  font-size: 23px; /*  É ESSA LINHA que controla o tamanho do texto */
+}
+
+/* EFEITO HOVER */
+.cta-final-btn:hover {
+  background: #e6eef7; /* muda o fundo ao passar o mouse (efeito de interação) */
+  transform: translateY(-2px); /* levanta levemente o botão */
+}
+
+/* TEXTO PEQUENO */
+.cta-final-mini {
+  display: block; /* faz ocupar linha inteira */
+  margin-top: 20px; /* espaço acima do texto */
+  font-size: 14px; /* tamanho menor para informação secundária */
+  opacity: 0.9; /* leve transparência para não competir com o CTA */
+}
+/* =========================
+   FOOTER (COM IMAGEM)
+   ========================= */
+
+/* BLOCO PRINCIPAL DO FOOTER */
+.site-footer {
+  position: relative;
+
+  /* FOTO DE FUNDO (troque pela sua imagem) */
+  background: url('logo.jpeg') no-repeat center center;
+  background-size: cover;
+
+  color: #ffffff;
+  padding: 80px 20px 60px;
+  overflow: hidden;
+}
+
+/* "CORTINA" AZUL POR CIMA DA IMAGEM */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* degradê escuro para melhorar leitura */
+  background: linear-gradient(
+    rgba(5, 25, 55, 0.85),
+    rgba(10, 35, 70, 0.9)
+  );
+
+  z-index: 1;
+}
+
+/* GARANTE QUE O CONTEÚDO FIQUE NA FRENTE DA IMAGEM */
+.site-footer-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* BLOCO DE CONTATO */
+/* BLOCO DE CONTATO (título da seção: ex: "Contato") */
+.site-footer-contato h3 {
+  font-size: 28px; /* define o tamanho do título */
+  margin-bottom: 15px; /* espaço abaixo do título */
+  color: #dbeafe; /* cor azul clara para destacar sem pesar */
+}
+
+/* TEXTOS DE CONTATO (telefone, @, email) */
+.site-footer-contato p {
+  font-size: 17px; /* tamanho do texto */
+  margin-bottom: 8px; /* espaçamento entre cada linha */
+  color: #cbd5e1; /* cor suave para não competir com o título */
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+.site-footer-contato p:hover {
+  color: #ffffff; /* deixa o texto branco ao passar o mouse (destaque) */
+  transition: 0.3s; /* animação suave na mudança de cor */
+}
+
+.site-footer-contato {
+  text-align: center; /* centraliza todo o conteúdo dentro do bloco */
+}
+
+/* RESET GLOBAL (remove espaços indesejados) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove borda branca lateral */
+body {
+  margin: 0;
+  background: #0b1c2c; /* mesma cor do site */
+}
+
+/* ===== BOTÃO WHATSAPP ===== */
+.whatsapp-fixo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.whatsapp-fixo img {
+  width: 30px;
+  height: 30px;
+}
+
+.whatsapp-fixo:hover {
+  transform: scale(1.1);
+}
+
+/* ===== RESPONSIVO CELULAR ===== */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .menu a {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 22px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  /* BOTÃO */
+  .btn-whatsapp {
+    font-size: 16px;
+    padding: 15px 25px;
+  }
+
+}
