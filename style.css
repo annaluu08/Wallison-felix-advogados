@@ -48,15 +48,6 @@ padding-right:20px;
 color-scheme: dark;
 }
 
-button,
-a,
-input{
-
-color:inherit;
-background-color:inherit;
-
-}
-
 /* ===== BASE ===== */
 
 html{
@@ -165,8 +156,8 @@ flex-shrink:0;
 .logo img{
 
 /* tamanho fixo da logo */
-width:50px;
-height:50px;
+width:300px;
+height:70px;
 
 /* evita distorção */
 object-fit:cover;
@@ -1198,54 +1189,65 @@ display:none;
 MOBILE
 ========================= */
 
+/* =========================
+HEADER MOBILE
+========================= */
+
 @media (max-width:768px){
 
-/* container vira coluna */
+/* remove espaço do header */
+.header{
+padding:0;
+}
+
+/* container sem espaço lateral */
 .header-container{
 
 flex-direction:column;
 
-align-items:center;
+padding:0;
+margin:0;
 
-padding:15px 20px;
+width:100%;
 
 }
 
-/* logo e nome menores */
+/* logo ocupa toda largura */
+.logo{
+
+width:100%;
+
+margin:0;
+
+}
+
+/* imagem encostando nas bordas */
 .logo img{
 
-width:38px;
-height:38px;
+width:100%;
+height:auto;
+
+display:block;
 
 }
 
+/* nome pode ficar oculto se a logo já tiver texto */
 .nome{
-
-font-size:17px;
-
+display:none;
 }
 
-/* menu vai para baixo */
+/* menu abaixo */
 .menu{
 
-margin-top:10px;
+width:100%;
 
-margin-left:0;
-
-padding-right:0;
-
-flex-wrap:wrap;
+margin-top:12px;
 
 justify-content:center;
 
+flex-wrap:wrap;
+
 gap:18px;
-
-}
-
-/* links menores */
-.menu a{
-
-font-size:14px;
 
 }
 
@@ -1327,68 +1329,4 @@ padding:60px 25px;
 
 }
 
-/* layout vira coluna */
-.sobre-container{
-
-display:flex;
-flex-direction:column;
-align-items:center;
-
 }
-
-/* foto aparece em cima */
-.foto-profissional{
-
-display:block;
-margin-bottom:25px;
-
-}
-
-/* foto quadrada arredondada */
-.foto-profissional img{
-
-width:180px;
-height:180px;
-
-object-fit:cover;
-
-border-radius:20px;
-
-}
-
-/* texto centralizado */
-.sobre-texto{
-
-text-align:center;
-
-}
-
-/* título */
-.sobre-texto h2{
-
-font-size:26px;
-
-}
-
-/* subtítulo */
-.sobre-texto h3{
-
-font-size:20px;
-margin-bottom:20px;
-
-}
-
-/* parágrafos */
-.sobre-texto p{
-
-font-size:16px;
-line-height:1.6;
-text-align:justify;
-
-}
-
-}
-
-/*faq*/
-/*ainda com dúvidas?*/
-/*footer*/
