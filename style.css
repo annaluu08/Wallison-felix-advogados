@@ -1,242 +1,437 @@
-:root {
-  color-scheme: light;
-}
-html {
-  background-color: #0b1c2c;
-}
+/* ===== RESET ===== */
 
-body {
-  background-color: #e9e9e9;
-}
-/* RESET GLOBAL (remove espaços indesejados) */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::before,
+*::after{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* Remove borda branca lateral */
-body {
-  margin: 0;
-  background: #0b1c2c;
-}
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+/* ===== CONTAINER FLEXÍVEL DO SITE ===== */
 
-.container-geral{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+.site-container{
 
-/* BODY */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #e9e9e9;
-}
+width:100%;
+/* permite que o site ocupe toda a largura da tela */
 
-/* ===== HEADER ===== */
-header {
-  background-color: #0e2a47;
-
-  display: flex;
-  justify-content: space-between;
-
-  align-items: center;
-
-  padding: 20px 80px;
-}
-
-/* ===== LOGO ===== */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 100%;
-  max-width: 40px;
-}
-
-.logo span {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/* ===== MENU ===== */
-.menu {
-  display: flex;
-  align-items: center;
-}
-
-/* ===== LINKS DO MENU ===== */
-.menu a {
-  font-size: 15px;
-  color: #ffffff;
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-/* ===== HOVER ===== */
-.menu a:hover {
-  color: #d4af37;
-}
-
-/* ===== ROLAGEM SUAVE ===== */
-html {
-  scroll-behavior: smooth;
-}
-
-/* ================= */
-/* ===== MOBILE ==== */
-/* ================= */
-
-@media (max-width: 768px) {
-
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .logo {
-    width: 100%;
-  max-width: 12px;
-  }
-
-  .menu {
-    width: 100%;
-    justify-content: center; /* centraliza menu */
-    flex-wrap: nowrap; /* impede quebra de linha */
-  }
-
-  .menu a {
-    margin: 0 10px; /* espaçamento entre links */
-  }
+margin:0 auto;
+/* centraliza o site */
 
 }
-/* HERO COMPLETO */
-.hero {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 60px;
-}
-  /* IMAGEM DE FUNDO */
- .hero {
-  background: url('hero.png') no-repeat center center;
-  background-size: cover;
-}
 
-@media (max-width: 768px) {
-  .hero {
-    padding: 60px 20px;
-    text-align: right;
-  }
-}
-/* CAMADA ESCURA (EFEITO VIDRO) */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
 
-  /* cor do "vidro" */
-  background: rgba(6, 28, 47, 0.75);
+/* ===== CONTAINER INTERNO DAS SEÇÕES ===== */
 
-  /* efeito mais premium */
-  backdrop-filter: blur(4px);
+.container{
 
-  z-index: 1;
+width:100%;
+/* ocupa toda a largura disponível */
+
+max-width:1200px;
+/* largura máxima do site em telas grandes */
+
+margin:0 auto;
+/* centraliza o conteúdo */
+
+padding-left:20px;
+padding-right:20px;
+/* espaço lateral para telas pequenas */
+
 }
 
-/* GARANTE QUE O CONTEÚDO FIQUE NA FRENTE */
+
+/* ===== ROOT ===== */
+
+:root{
+color-scheme: dark;
+}
+
+button,
+a,
+input{
+
+color:inherit;
+background-color:inherit;
+
+}
+
+/* ===== BASE ===== */
+
+html{
+background-color:#0b1c2c;
+
+/* ativa rolagem suave ao clicar nos links */
+scroll-behavior:smooth;
+
+-webkit-text-size-adjust:100%;
+background-color:#0e2a47;
+
+}
+
+body{
+
+font-family:Arial, sans-serif;
+
+background-color:#e9e9e9;
+
+overflow-x:hidden;
+
+}
+
+
+/* ===== IMAGENS ===== */
+
+img,
+picture{
+
+max-width:100%;
+height:auto;
+
+display:block;
+
+}
+
+
+/* ===== LAYOUT ===== */
+
+/* =========================
+HEADER
+========================= */
+
+.header{
+
+/* cor do fundo */
+background:#0e2a47;
+
+/* espaço interno vertical */
+padding:25px 0;
+
+/* mantém header acima das seções */
+position:relative;
+
+z-index:10;
+
+}
+
+
+/* =========================
+CONTAINER DO HEADER
+========================= */
+.header-container{
+
+/* ativa flexbox */
+display:flex;
+
+/* alinha verticalmente */
+align-items:center;
+
+/* separa esquerda e direita */
+justify-content:space-between;
+
+/* ocupa toda largura da tela */
+width:100%;
+
+/* pequeno respiro das bordas */
+padding:0 40px;
+
+}
+
+
+/* =========================
+LOGO + NOME
+========================= */
+
+.logo{
+
+/* logo e nome lado a lado */
+display:flex;
+
+/* alinhamento vertical */
+align-items:center;
+
+/* espaço entre imagem e nome */
+gap:12px;
+
+/* impede compressão do bloco */
+flex-shrink:0;
+
+}
+
+
+/* imagem da logo */
+
+.logo img{
+
+/* tamanho fixo da logo */
+width:50px;
+height:50px;
+
+/* evita distorção */
+object-fit:cover;
+
+}
+
+
+/* nome do escritório */
+
+.nome{
+
+/* cor branca */
+color:#ffffff;
+
+/* tamanho equilibrado */
+font-size:20px;
+
+/* peso da fonte */
+font-weight:600;
+
+/* remove margem padrão do h1 */
+margin:0;
+
+/* impede quebra de linha */
+white-space:nowrap;
+
+}
+
+
+/* =========================
+MENU
+========================= */
+
+.menu{
+
+/* coloca links lado a lado */
+display:flex;
+
+/* espaço entre os links */
+gap:28px;
+
+/* empurra o menu para a direita */
+margin-left:auto;
+
+/* respiro antes da borda */
+padding-right:10px;
+
+}
+
+
+/* links do menu */
+
+.menu a{
+
+/* cor branca */
+color:#ffffff;
+
+/* remove sublinhado */
+text-decoration:none;
+
+/* tamanho da fonte */
+font-size:16px;
+
+/* peso médio */
+font-weight:500;
+
+/* impede quebra de texto */
+white-space:nowrap;
+
+/* animação suave */
+transition:0.3s;
+
+}
+
+
+/* efeito ao passar mouse */
+
+.menu a:hover{
+
+/* dourado jurídico */
+color:#d4af37;
+
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+/* cria referência para posicionamento do overlay */
+position:relative;
+
+/* imagem de fundo do hero */
+background:url('hero.png') no-repeat center center;
+
+/* faz a imagem cobrir toda a área */
+background-size:cover;
+
+/* espaço interno vertical da seção */
+padding:120px 0;
+
+/* impede que elementos internos ultrapassem o hero */
+overflow:hidden;
+
+}
+
+
+/* layout interno do hero */
+
+.hero .container{
+
+/* ativa flexbox */
+display:flex;
+
+/* centraliza verticalmente */
+align-items:center;
+
+/* separa texto e imagem */
+justify-content:space-between;
+
+/* espaço entre os dois blocos */
+gap:40px;
+
+}
+
+
+/* =========================
+EFEITO VIDRO
+========================= */
+
+.hero::before{
+
+/* cria elemento virtual antes do conteúdo */
+content:"";
+
+/* posicionamento absoluto dentro do hero */
+position:absolute;
+
+/* ocupa toda a área do hero */
+inset:0;
+
+/* camada escura sobre a imagem */
+background:rgba(6, 28, 47, 0.75);
+
+/* aplica desfoque (efeito glassmorphism) */
+backdrop-filter:blur(4px);
+
+}
+
+
+/* garante que texto e imagem fiquem acima do overlay */
+
 .hero-text,
-.hero-image {
-  position: relative;
-  z-index: 2;
+.hero-image{
+
+/* mantém no fluxo normal */
+position:relative;
+
+/* camada acima do overlay */
+z-index:2;
+
 }
 
-/* TEXTO */
-.hero-text {
-  max-width: 500px;
+
+/* =========================
+TEXTO
+========================= */
+
+.hero-text{
+
+/* limita largura do texto para melhor leitura */
+max-width:500px;
+
 }
 
-.hero-text h1 {
-  font-size: 32px;
-  color: #ffffff; /* TEXTO BRANCO */
-  margin-bottom: 20px;
+.hero-text h1{
+
+/* tamanho do título principal */
+font-size:32px;
+
+/* cor branca para contraste */
+color:#ffffff;
+
+/* espaço abaixo do título */
+margin-bottom:20px;
+
 }
 
-.hero-text p {
-  color: #e2e8f0;
-  margin-bottom: 30px;
-}
-/* BOTÃO whatsapp */
-.hero-text a {
-  display: inline-block; 
-  /* Faz o <a> se comportar como botão */
+.hero-text p{
 
-  background: linear-gradient(135deg, #d4af37, #b8962e);
-  /* Gradiente dourado premium */
+/* cor mais suave que o título */
+color:#e2e8f0;
 
-  color: #000;
-  /* Cor do texto */
+/* espaço abaixo do parágrafo */
+margin-bottom:30px;
 
-  padding: 15px 35px;
-  /* Espaçamento interno */
-
-  border-radius: 10px;
-  /* Bordas arredondadas */
-
-  font-size: 14px;
-
-  text-decoration: none;
-  /* REMOVE o sublinhado do link */
-
-  cursor: pointer;
-
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  /* Sombra elegante */
-
-  transition: 0.3s;
 }
 
-/* Efeito ao passar o mouse */
-.hero-text a:hover {
-  transform: translateY(-2px);
+
+/* =========================
+BOTÃO
+========================= */
+
+.hero-text a{
+
+/* permite padding e comportamento de botão */
+display:inline-block;
+
+/* gradiente dourado */
+background:linear-gradient(135deg,#d4af37,#b8962e);
+
+/* cor do texto */
+color:#000;
+
+/* espaço interno do botão */
+padding:15px 35px;
+
+/* bordas arredondadas */
+border-radius:10px;
+
+/* tamanho da fonte */
+font-size:14px;
+
+/* remove sublinhado */
+text-decoration:none;
+
+/* muda cursor ao passar o mouse */
+cursor:pointer;
+
+/* sombra elegante */
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+/* animação suave */
+transition:0.3s;
+
 }
 
-/* IMAGEM DA DIREITA (opcional manter) */
-.hero-image img {
-  width: 400px;
-  border-radius: 10px;
+
+/* efeito hover do botão */
+
+.hero-text a:hover{
+
+/* levanta levemente o botão */
+transform:translateY(-2px);
+
 }
 
-.logo img {
-  width: 40px;      /* controla o tamanho */
-  height: 40px;
-  object-fit: cover;
-  border-radius: 6px; /* opcional (deixa levemente arredondado) */
-}
 
-@media (max-width: 768px) {
-  .hero {
-    background-position: center top;
-  }
-}
+/* =========================
+IMAGEM
+========================= */
 
-.hero {
-  background: url('hero.png') no-repeat center center;
-  background-size: cover;
+.hero-image img{
+
+/* imagem se adapta ao container */
+width:100%;
+
+/* limite máximo da imagem */
+max-width:400px;
+
+/* bordas arredondadas */
+border-radius:10px;
+
 }
 
 /*/* =========================
@@ -330,33 +525,7 @@ html {
   font-style: italic;
 }
 
-/* Responsivo */
-@media (max-width: 900px) {
-  .benefits-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
-@media (max-width: 500px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* =========================
-   RESPONSIVO (MOBILE)
-   ========================= */
-@media (max-width: 768px) {
-
-  /* 1 coluna no mobile */
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Reduz tamanho do título */
-  .benefits h2 {
-    font-size: 24px;
-  }
-}
 /*sem estrutura você tenta, cor de fundo*/
 /* ===== Seção CTA (parte final abaixo dos cards) ===== */
 
@@ -440,48 +609,73 @@ html {
 /* parte da oferta*/
 /* ===== Seção principal ===== */
 /* ===== Seção principal (agora com imagem de fundo) ===== */
-.oferta {
-  position: relative; /* Necessário para o overlay funcionar */
-
-  /* Imagem de fundo (troque pelo caminho correto) */
-  background: url("oferta.jpg") no-repeat center center;
-
-  background-size: cover; /* Faz a imagem ocupar toda a seção */
-  background-position: center;
-
-  color: #ffffff;
-  padding: 80px 20px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-
 /* ===== Overlay escuro (efeito premium + melhora leitura) ===== */
-.oferta::before {
-  content: ""; /* obrigatório */
+/* ===== SEÇÃO PRINCIPAL DA OFERTA ===== */
+.oferta{
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: relative; 
+  /* define a seção como referência para o overlay (::before) */
 
-  /* Azul escuro com transparência */
-  background: rgba(11, 28, 44, 0.85);
+  background: url("oferta.jpg") no-repeat center center; 
+  /* imagem de fundo da seção */
 
-  z-index: 0; /* fica atrás do conteúdo */
+  background-size: cover; 
+  /* faz a imagem ocupar toda a área da seção */
+
+  background-position: center; 
+  /* mantém o foco da imagem centralizado */
+
+  color: #ffffff; 
+  /* define a cor padrão do texto como branco */
+
+  padding: 80px 20px; 
+  /* espaço interno da seção (80px em cima/baixo e 20px lados) */
+
+  font-family: 'Segoe UI', sans-serif; 
+  /* fonte usada no texto */
+
+  display: flex; 
+  /* ativa o sistema Flexbox para organizar os elementos internos */
+
+  flex-direction: column; 
+  /* GARANTE que todos os elementos fiquem um abaixo do outro */
+
+  justify-content: center; 
+  /* centraliza os elementos verticalmente dentro da seção */
+
+  align-items: center; 
+  /* centraliza os elementos horizontalmente */
+
+  text-align: center; 
+  /* centraliza o texto dentro dos elementos */
+
+  gap: 25px;
+  /* cria espaço entre cada elemento (título, texto, lista, botão) */
+
 }
 
 
-/* ===== Container (fica acima do overlay) ===== */
-.container {
-  position: relative;
-  z-index: 1; /* garante que o conteúdo apareça na frente */
+/* overlay azul */
+.oferta::before{
+  content:"";
+  position:absolute;
 
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  background:rgba(11,28,44,0.75);
+
+  z-index:1; /* fica acima da imagem */
 }
 
+
+/* conteúdo fica acima do overlay */
+.oferta *{
+  position:relative;
+  z-index:2;
+}
 
 /* ===== Título ===== */
 .oferta h1 {
@@ -527,7 +721,7 @@ html {
 
 
 /* ===== Botão ===== */
-.botao {
+.btn-cta {
   display: inline-block;
   background: linear-gradient(135deg, #d4af37, #b8962e);
   color: #0b1c2c;
@@ -539,7 +733,7 @@ html {
   transition: 0.3s;
 }
 
-.botao:hover {
+.btn-cta:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
@@ -558,183 +752,153 @@ html {
   margin-top: 10px;
   color: #c5c5c5; /* ajustado para combinar com fundo escuro */
 }
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .oferta-box {
-    grid-template-columns: 1fr;
-  }
 
-  .preco-box {
-    grid-column: span 1;
-  }
-}
 
 /* ===== SEÇÃO APRESENTAÇÃO PROFISSIONAL ===== */
 
 /* =========================
-   SEÇÃO SOBRE (COM IMAGEM DE FUNDO)
+   SEÇÃO SOBRE
    ========================= */
-.sobre {
-  /* IMAGEM DE FUNDO (advogado + azul já aplicado) */
-  background: url('apresentacao.png') no-repeat center right;
+/* =========================
+   SEÇÃO SOBRE
+   ========================= */
+   /* =========================
+   IMAGEM DO ADVOGADO
+   ========================= */
 
-  background-size: cover; /* faz a imagem cobrir toda a seção */
-  
-  color: #ffffff; /* texto branco para contraste */
-  padding: 100px 20px; /* espaço interno da seção */
-}
+.foto-profissional img{
 
-/* ===== CONTAINER ===== */
-.sobre-container {
-  max-width: 1100px; /* largura máxima */
-  margin: 0 auto; /* centraliza na tela */
+  max-width:420px;
+  /* define um tamanho mais equilibrado da foto */
 
-  display: flex; /* ativa layout lado a lado */
-  align-items: center; /* alinha verticalmente */
-  justify-content: flex-start; /* mantém conteúdo à esquerda */
+  height:auto;
+  /* mantém a proporção da imagem */
 
-  min-height: 510px; /* altura mínima para dar destaque */
-}
+  display:block;
+  /* evita espaços estranhos em imagens */
 
-/* ===== BLOCO DE TEXTO ===== */
-
-/* ===== BLOCO DE TEXTO (AJUSTE) ===== */
-/* ===== SEÇÃO ===== */
-.sobre {
-  padding: 60px 0;
-  /* Espaçamento vertical da seção (topo e baixo)
-     → cria respiro e deixa o layout mais elegante */
 }
 
 
-/* ===== CONTAINER (DEFINE A COLUNA DO TEXTO) ===== */
-.sobre-container {
-  max-width: 600px; 
-  /* Limita a largura do conteúdo
-     → evita linhas muito longas (melhora leitura) */
+/* =========================
+   SEÇÃO SOBRE
+   ========================= */
 
-  margin-left: 80px; 
-  /* Define o recuo da coluna em relação à esquerda
-     → esse valor controla o alinhamento geral */
+.sobre{
+
+  background:url('apresentacao.png') no-repeat center right;
+  /* imagem de fundo */
+
+  background-size:cover;
+  /* faz a imagem cobrir toda a seção */
+
+  color:#ffffff;
+  /* texto branco */
+
+  padding:40px 40px;
+  /* espaçamento interno da seção */
+
 }
 
 
-/* ===== TÍTULO PRINCIPAL ===== */
-.sobre h2 {
-  font-size: 42px;
-  /* Tamanho grande para transmitir autoridade */
+/* =========================
+   CONTAINER PRINCIPAL
+   ========================= */
 
-  font-weight: 600;
-  /* Peso semi-bold = mais sofisticado */
+.sobre-container{
 
-  letter-spacing: -0.5px;
-  /* Leve ajuste para aparência mais premium */
+  max-width:1300px;
+  /* largura máxima da seção */
 
-  margin-left: 80px; 
-  /* IMPORTANTE: alinha o título com o texto
-     → deve ter o mesmo valor do .sobre-container */
+  margin:0 auto;
+  /* centraliza na tela */
 
-  margin-bottom: 30px; 
-  /* Espaço entre o título e o conteúdo abaixo */
+  display:flex;
+  /* ativa layout lado a lado (texto + foto) */
+
+  align-items:flex-start;
+  /* alinha tudo pelo topo */
+
+  justify-content:space-between;
+  /* cria espaço entre o texto e a foto */
+
+  gap:60px;
+  /* espaço fixo entre texto e imagem */
+
+  min-height:500px;
+  /* altura mínima da seção */
+
 }
 
 
-/* ===== BLOCO DE TEXTO ===== */
-.sobre-texto {
-  text-align: left;
-  /* Alinhamento padrão para leitura profissional */
+/* =========================
+   BLOCO DE TEXTO
+   ========================= */
+
+.sobre-texto{
+
+  max-width:520px;
+  /* largura ideal para leitura */
+
+  text-align:left;
+  /* alinhamento do texto */
+
 }
 
 
-/* ===== SUBTÍTULO (Prazer, Advogado...) ===== */
-.sobre-texto h3 {
-  font-size: 22px;
-  /* Menor que o h2, criando hierarquia visual */
+/* =========================
+   TÍTULO PRINCIPAL
+   ========================= */
 
-  font-weight: 500;
-  /* Peso médio para diferenciar do título principal */
+.sobre-texto h2{
 
-  margin-bottom: 15px;
-  /* Espaço entre subtítulo e primeiro parágrafo */
+  font-size:33px;
+  /* tamanho do título */
 
-  
-  text-align: center;
-  /* CENTRALIZA o texto corretamente */
+  font-weight:600;
+  /* peso da fonte */
+
+  margin-bottom:15px;
+  /* espaço abaixo do título */
+
 }
 
 
-/* ===== PARÁGRAFOS ===== */
-/* ===== PARÁGRAFOS ===== */
-.sobre-texto p {
-  font-size: 18px;
-  /* Tamanho ideal para leitura confortável */
+/* =========================
+   SUBTÍTULO
+   ========================= */
 
-  line-height: 1.7;
-  /* Espaçamento entre linhas melhora legibilidade */
+.sobre-texto h3{
 
-  color: #f3f3f3;
-  /* Cor clara para contraste */
+  font-size:22px;
+  /* tamanho do subtítulo */
 
-  margin-bottom: 15px;
-  /* Espaço entre parágrafos */
+  font-weight:500;
+  /* peso médio */
 
-  text-align: center;
-  /* CENTRALIZA o texto corretamente */
+  margin-bottom:25px;
+  /* espaço abaixo */
+
 }
-/* ===================================== */
-/* AJUSTES APENAS PARA MOBILE            */
-/* nada disso altera o desktop           */
-/* ===================================== */
 
-/* ===== SEÇÃO PROFISSIONAL - MOBILE ===== */
-@media (max-width: 768px) {
 
-  .sobre {
-    background-image: none !important; /* remove imagem de fundo */
-    background-color: #0e2a47; /* deixa apenas o azul */
-    text-align: center;
-    padding: 40px 20px;
-  }
+/* =========================
+   PARÁGRAFOS
+   ========================= */
 
-  /* FOTO DO PROFISSIONAL */
-  .foto-profissional {
-     width: 100%;
-    max-width: 120px;
+.sobre-texto p{
 
-    margin: 0 auto 20px auto;
+  font-size:18px;
+  /* tamanho confortável para leitura */
 
-    overflow: hidden;
-    border-radius: 8px; /* quadrado elegante */
-  }
+  line-height:1.7;
+  /* espaçamento entre linhas */
 
-  .foto-profissional img {
-     width: 100%;
-  max-width: 100px;
-    object-fit: cover;
-  }
+  color:#f3f3f3;
+  /* cor clara */
 
-  /* TÍTULO */
-  .sobre h2 {
-    font-size: 22px;
-    white-space: nowrap; /* mantém em uma linha */
-    margin-bottom: 20px;
-  }
-
-  /* TEXTO */
-  .sobre p {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    font-size: 16px;
-    line-height: 1.6;
-
-    text-align: center;
-  }
-    font-size: 16px;
-    line-height: 1.6;
-
-    text-align: center;
-  }
+  margin-bottom:15px;
+  /* espaço entre parágrafos */
 
 }
 /* ===== SEÇÃO DÚVIDAS FREQUENTES ===== */
@@ -925,7 +1089,7 @@ html {
   position: relative;
 
   /* FOTO DE FUNDO (troque pela sua imagem) */
-  background: url('logo.jpeg') no-repeat center center;
+  background: url('desenho.jpeg') no-repeat center center;
   background-size: cover;
 
   color: #ffffff;
@@ -1017,46 +1181,6 @@ body {
   transform: scale(1.1);
 }
 
-/* ===== RESPONSIVO CELULAR ===== */
-@media (max-width: 768px) {
-
-  /* HEADER */
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .menu {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .menu a {
-    margin: 10px;
-    font-size: 14px;
-  }
-
-  /* HERO */
-  .hero {
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 22px;
-  }
-
-  .hero-text p {
-    font-size: 14px;
-  }
-
-  /* BOTÃO */
-  .btn-whatsapp {
-    font-size: 16px;
-    padding: 15px 25px;
-  }
-
-}
 
 /* ESCONDE FOTO QUADRADA NO DESKTOP */
 
@@ -1064,154 +1188,207 @@ body {
 display:none;
 }
 
-/* ======================================= */
-/* AJUSTES SOMENTE PARA CELULAR */
-/* tudo aqui só acontece em telas menores que 768px */
-/* ======================================= */
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+/*responsivo*/
+/*header, logo, título, menu*/
 
-@media (max-width: 768px) {
+/* =========================
+MOBILE
+========================= */
 
-  /* ----------------------------------- */
-  /* REMOVE A IMAGEM DE FUNDO DO DESKTOP */
-  /* ----------------------------------- */
+@media (max-width:768px){
 
-  .apresentacao {
+/* container vira coluna */
+.header-container{
 
-    background: #0e2a47 !important; 
-    /* força o fundo azul e remove qualquer imagem */
-
-    background-image: none !important; 
-    /* garante que nenhuma imagem de fundo apareça */
-
-    padding: 40px 20px; 
-    /* espaço interno da seção */
-
-    text-align: center; 
-    /* centraliza todo o conteúdo */
-
-  }
-
-
-  /* ----------------------------------- */
-  /* ORGANIZA OS ELEMENTOS EM COLUNA */
-  /* ----------------------------------- */
-
-  .apresentacao-container {
-
-    display: flex; 
-    /* ativa sistema flex */
-
-    flex-direction: column; 
-    /* coloca elementos um abaixo do outro */
-
-    align-items: center; 
-    /* centraliza horizontalmente */
-
-  }
-
-
-  /* ----------------------------------- */
-  /* FOTO DO ADVOGADO (QUADRADO) */
-  /* ----------------------------------- */
-
-  .foto-profissional {
-
-      display: block; /* faz a div aparecer */
-
-      margin-bottom: 20px; /* espaço abaixo da foto */
-
-      margin-left: auto; /* empurra para o centro */
-      margin-right: auto; /* empurra para o centro */
-
-      text-align: center; /* garante centralização */
-
-}
-
-  .foto-profissional img {
-
-    width: 160px; 
-    /* largura da foto */
-
-    height: 160px; 
-    /* altura da foto */
-
-    object-fit: cover; 
-    /* evita deformar a imagem */
-
-    border-radius: 12px; 
-    /* cantos arredondados */
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
-    /* sombra elegante */
-
-  }
-
-
-  /* ----------------------------------- */
-  /* TEXTO DA APRESENTAÇÃO */
-  /* ----------------------------------- */
-
-  .texto-profissional {
-
-    max-width: 320px; 
-    /* limita largura para leitura confortável */
-
-    margin: auto; 
-    /* centraliza */
-
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .sobre h2 {
-
-    font-size: 24px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 1px; /* deixa mais elegante */
-
-  }
-
-}
-
-.container-geral {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* TABLET */
-@media (max-width: 1024px) {
-
-.hero{
-padding:60px 40px;
-}
-
-}
-
-/* CELULAR GRANDE */
-@media (max-width: 768px) {
-
-.hero{
 flex-direction:column;
-text-align:center;
-}
+
+align-items:center;
+
+padding:15px 20px;
 
 }
 
-/* CELULAR PEQUENO */
-@media (max-width: 480px) {
+/* logo e nome menores */
+.logo img{
 
-.hero-text h1{
-font-size:20px;
+width:38px;
+height:38px;
+
 }
 
+.nome{
+
+font-size:17px;
+
+}
+
+/* menu vai para baixo */
+.menu{
+
+margin-top:10px;
+
+margin-left:0;
+
+padding-right:0;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:18px;
+
+}
+
+/* links menores */
 .menu a{
-font-size:13px;
-}
+
+font-size:14px;
 
 }
 
+}
+
+/*hero*/
+
+
+/*benefícios*/
+
+/* =========================
+CARDS RESPONSIVOS
+========================= */
+
+@media (max-width:768px){
+
+.benefits-grid{
+
+/* vira uma coluna */
+grid-template-columns:1fr;
+
+gap:25px;
+
+}
+
+/* cards ocupam largura total */
+.card{
+
+width:100%;
+
+}
+
+/* imagem maior para ficar legível */
+.card img{
+
+width:100%;
+height:auto;
+
+}
+
+/* texto um pouco maior no celular */
+.card h3{
+
+font-size:20px;
+
+}
+
+.card p{
+
+font-size:16px;
+line-height:1.5;
+
+}
+
+}
+/*fale agora*/
+/*oferta*/
+/*apresentação*/
+
+/* =========================
+SEÇÃO SOBRE - MOBILE
+========================= */
+
+/* =========================
+SEÇÃO SOBRE - MOBILE
+========================= */
+
+@media (max-width:768px){
+
+.sobre{
+
+/* remove imagem de fundo */
+background:none;
+
+/* mantém apenas azul */
+background-color:#0e2a47;
+
+padding:60px 25px;
+
+}
+
+/* layout vira coluna */
+.sobre-container{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+/* foto aparece em cima */
+.foto-profissional{
+
+display:block;
+margin-bottom:25px;
+
+}
+
+/* foto quadrada arredondada */
+.foto-profissional img{
+
+width:180px;
+height:180px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+}
+
+/* texto centralizado */
+.sobre-texto{
+
+text-align:center;
+
+}
+
+/* título */
+.sobre-texto h2{
+
+font-size:26px;
+
+}
+
+/* subtítulo */
+.sobre-texto h3{
+
+font-size:20px;
+margin-bottom:20px;
+
+}
+
+/* parágrafos */
+.sobre-texto p{
+
+font-size:16px;
+line-height:1.6;
+text-align:justify;
+
+}
+
+}
+
+/*faq*/
+/*ainda com dúvidas?*/
+/*footer*/
