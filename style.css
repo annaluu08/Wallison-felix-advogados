@@ -1310,23 +1310,49 @@ line-height:1.5;
 /* =========================
 SEÇÃO SOBRE - MOBILE
 ========================= */
-
-/* =========================
-SEÇÃO SOBRE - MOBILE
-========================= */
-
 @media (max-width:768px){
 
 .sobre{
 
-/* remove imagem de fundo */
 background:none;
-
-/* mantém apenas azul */
 background-color:#0e2a47;
 
 padding:60px 25px;
 
+}
+
+.sobre-container{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+.foto-profissional{
+
+display:flex !important;
+justify-content:center;
+
+margin-bottom:25px;
+
+}
+
+.foto-profissional img{
+
+width:180px;
+height:180px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+display:block;
+
+}
+
+.sobre-texto{
+text-align:center;
 }
 
 }
