@@ -902,6 +902,7 @@ border-radius:10px;
 
 /* ===== TÍTULO ===== */
 .faq h2 {
+     color:#0e2a47;
   font-size: 32px; /* tamanho do título */
   margin-bottom: 40px; /* espaço abaixo do título */
 }
@@ -1356,3 +1357,4 @@ text-align:center;
 }
 
 }
+
