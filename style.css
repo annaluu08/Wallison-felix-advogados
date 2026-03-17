@@ -90,102 +90,66 @@ display:block;
 /* =========================
 HEADER
 ========================= */
+header{
 
-.header{
+/* imagem do header */
+background-image:url("logo.png");
 
-/* cor do fundo */
-background:#0e2a47;
+/* alinha mais para a esquerda */
+background-position:left center;
 
-/* espaço interno vertical */
-padding:25px 0;
+/* faz a imagem ocupar TODO o header */
+background-size:cover;
 
-/* mantém header acima das seções */
-position:relative;
+/* evita repetição */
+background-repeat:no-repeat;
 
-z-index:10;
+/* altura do header */
+height:120px;
+
+/* estrutura */
+display:flex;
+align-items:center;
 
 }
-
 
 /* =========================
 CONTAINER DO HEADER
 ========================= */
+
 .header-container{
 
-/* ativa flexbox */
 display:flex;
 
-/* alinha verticalmente */
+/* centraliza vertical */
 align-items:center;
 
-/* separa esquerda e direita */
+/* separa logo e menu */
 justify-content:space-between;
 
-/* ocupa toda largura da tela */
 width:100%;
 
-/* pequeno respiro das bordas */
-padding:0 40px;
+/* menor distância da borda esquerda */
+padding:0 20px;
 
 }
-
 
 /* =========================
-LOGO + NOME
+NOME
 ========================= */
-
-.logo{
-
-/* logo e nome lado a lado */
-display:flex;
-
-/* alinhamento vertical */
-align-items:center;
-
-/* espaço entre imagem e nome */
-gap:12px;
-
-/* impede compressão do bloco */
-flex-shrink:0;
-
-}
-
-
-/* imagem da logo */
-
-.logo img{
-
-/* tamanho fixo da logo */
-width:300px;
-height:70px;
-
-/* evita distorção */
-object-fit:cover;
-
-}
-
-
-/* nome do escritório */
 
 .nome{
 
-/* cor branca */
 color:#ffffff;
-
-/* tamanho equilibrado */
-font-size:20px;
-
-/* peso da fonte */
+font-size:18px;
 font-weight:600;
-
-/* remove margem padrão do h1 */
 margin:0;
-
-/* impede quebra de linha */
 white-space:nowrap;
 
-}
+/* aproxima mais da esquerda */
+margin-left:10px;
 
+}
 
 /* =========================
 MENU
@@ -193,56 +157,36 @@ MENU
 
 .menu{
 
-/* coloca links lado a lado */
 display:flex;
-
-/* espaço entre os links */
 gap:28px;
 
-/* empurra o menu para a direita */
+/* mantém menu na direita */
 margin-left:auto;
 
-/* respiro antes da borda */
-padding-right:10px;
+/* centraliza altura */
+align-items:center;
+
+/* pequena margem da borda */
+padding-right:20px;
 
 }
 
-
-/* links do menu */
-
 .menu a{
 
-/* cor branca */
 color:#ffffff;
-
-/* remove sublinhado */
 text-decoration:none;
-
-/* tamanho da fonte */
-font-size:16px;
-
-/* peso médio */
+font-size:15px;
 font-weight:500;
-
-/* impede quebra de texto */
 white-space:nowrap;
-
-/* animação suave */
 transition:0.3s;
 
 }
 
-
-/* efeito ao passar mouse */
-
 .menu a:hover{
 
-/* dourado jurídico */
 color:#d4af37;
 
 }
-
-
 /* =========================
 HERO
 ========================= */
@@ -852,6 +796,8 @@ border-radius:10px;
   margin-bottom:15px;
   /* espaço abaixo do título */
 
+
+
 }
 
 
@@ -902,9 +848,10 @@ border-radius:10px;
 
 /* ===== TÍTULO ===== */
 .faq h2 {
-     color:#0e2a47;
+  color:#0e2a47;
   font-size: 32px; /* tamanho do título */
   margin-bottom: 40px; /* espaço abaixo do título */
+
 }
 
 /* ===== ITEM (CAIXA DE CADA PERGUNTA) ===== */
@@ -1193,74 +1140,71 @@ MOBILE
 /* =========================
 HEADER MOBILE
 ========================= */
-
 @media (max-width:768px){
 
-/* remove espaço do header */
 .header{
-padding:0;
+position:relative;
+padding-bottom:60px;
 }
 
-/* container sem espaço lateral */
 .header-container{
-
+display:flex;
 flex-direction:column;
-
-padding:0;
-margin:0;
-
-width:100%;
-
+align-items:center;
 }
 
-/* logo ocupa toda largura */
-.logo{
-
-width:100%;
-
-margin:0;
-
-}
-
-/* imagem encostando nas bordas */
 .logo img{
-
 width:100%;
 height:auto;
-
 display:block;
+}
+
+.menu{
+
+position:absolute;
+bottom:10px;
+left:0;
+
+width:100%;
+
+display:flex;
+justify-content:center;
+
+flex-wrap:nowrap;
+
+gap:10px;
+
+padding:0 10px;
 
 }
 
-/* nome pode ficar oculto se a logo já tiver texto */
-.nome{
+/* LINKS */
+
+.menu a{
+
+font-size:14px;
+padding:4px 3px;
+white-space:nowrap;
+
+}
+
+/* ESCONDE INÍCIO */
+
+.menu a:first-child{
 display:none;
 }
 
-/* menu abaixo */
-.menu{
+/* TROCA ÁREAS DE ATUAÇÃO */
 
-width:100%;
-
-margin-top:10px;
-
-padding:10px 0;   /* aumenta altura do menu */
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:19px; /* mais espaço entre links */
-
+.menu a:nth-child(3){
+font-size:0;
 }
 
-/* links do menu */
-.menu a{
-
-padding:8px 6px; /* aumenta área clicável */
-
-font-size:17px; /* melhora leitura no celular */
+.menu a:nth-child(3)::after{
+content:"Atuação";
+font-size:14px;
 }
+
 }
 
 /*hero*/
@@ -1366,6 +1310,3 @@ text-align:center;
 }
 
 }
-
-
-
